@@ -59,7 +59,12 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.courutines.play.services)
     implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
+    implementation(libs.androidx.material3)
 
+    implementation("androidx.compose.material:material-icons-core")
+
+    // Library lengkap (untuk ArrowBack, Add, Phone, dll)
+    implementation("androidx.compose.material:material-icons-extended")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
