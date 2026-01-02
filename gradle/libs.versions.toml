@@ -36,10 +36,8 @@ navigation-compose = {module = "androidx.navigation:navigation-compose", version
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
-courutines-play-services = { module = "org.jetbrains.kotlin: kotlinx-coroutines-play-services", version.ref = "courutines-play-services" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
-
-
+courutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "courutines-play-services" }
 
 
 [plugins]
