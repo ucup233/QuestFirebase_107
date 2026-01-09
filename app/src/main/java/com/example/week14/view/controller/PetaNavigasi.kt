@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.week14.view.DetailSiswaScreen
+import com.example.week14.view.EditSiswaScreen
 import com.example.week14.view.route.DestinasiEdit
 
 @Composable
@@ -58,6 +59,23 @@ fun HostNavigasi(
                 },
                 navigateBack = {
                     navController.navigate(DestinasiHome.route)
+                }
+            )
+        }
+        composable(
+            DestinasiEdit.routeWithArgs,
+            arguments = listOf(
+                navArgument(DestinasiEdit.itemIdArg) {
+                    type = NavType.StringType
+                }
+            )
+        ) {
+            EditSiswaScreen(
+                navigateBack = {
+                    navController.navigate(DestinasiHome.route)
+                },
+                onNavigateUp = {
+                    navController.navigateUp()
                 }
             )
         }
