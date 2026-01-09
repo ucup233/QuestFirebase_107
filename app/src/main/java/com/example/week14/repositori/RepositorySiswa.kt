@@ -9,6 +9,7 @@ interface RepositorySiswa {
     suspend fun postDataSiswa(siswa: Siswa)
     suspend fun editSatuSiswa(id: Long, siswa: Siswa)
     suspend fun getSatuSiswa(id: Long): Siswa?
+    suspend fun hapusSatuSiswa(id: Long)
 }
 
 class FirebaseRepositorySiswa : RepositorySiswa {
@@ -70,6 +71,12 @@ class FirebaseRepositorySiswa : RepositorySiswa {
             println("Gagal baca data siswa: ${e.message}")
             null
         }
+    }
+
+    override suspend fun hapusSatuSiswa(id: Long) {
+        val docQuery = collection.whereEqualTo("id", id).get().await()
+        val docId = docQuery.documents.firstOrNull()?.id ?: return
+        collection.document(docId).delete().await()
     }
 
 }
